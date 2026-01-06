@@ -34,15 +34,18 @@ Listar os vídeos em seções de categoria
 {
   podcastName: "Chill Cartoon Vibes",
   episode: "It's cold, I know, Get some rest, traveler",
-  coverImage: "https://i.ytimg.com/vi/0HwoWDLWPA4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2ALDhQcevSUUPNLL1bL88fi4IwA",
+  videId: "0HwoWDLWPA4",
+  coverImage: "https://i.ytimg.com/vi/0HwoWDLWPA4/maxresdefault.jpg",
   link: "https://www.youtube.com/watch?v=0HwoWDLWPA4"
-  category: ["saúde", "mú sica"]
+  category: ["chill", "música"]
 },
 {
   podcastName: "Obsidian Soundfields",
   episode: "082 // Wind Spine",
-  coverImage: "https://i.ytimg.com/vi/RpIxHX5wPpw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDIBsHMS9k-9Iv3842nMaB6r0w8vw"
-  category: ["saúde", "mú sica"]
+  videId: "RpIxHX5wPpw",
+  coverImage: "https://i.ytimg.com/vi/RpIxHX5wPpw/maxresdefault.jpg"
+  link: "https://www.youtube.com/watch?v=RpIxHX5wPpw"
+  category: ["ambiente", "chill"]
 }
 ]
 ```
