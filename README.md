@@ -22,6 +22,8 @@ Listar os vídeos em seções de categoria
 
 ### Implementação
 
+GET:
+
 - Retorno em API Rest (JSON):
   - Nome do canal
   - Nome do vídeo
@@ -31,21 +33,21 @@ Listar os vídeos em seções de categoria
 
 ```js
 [
-{
-  podcastName: "Chill Cartoon Vibes",
-  episode: "It's cold, I know, Get some rest, traveler",
-  videId: "0HwoWDLWPA4",
-  coverImage: "https://i.ytimg.com/vi/0HwoWDLWPA4/maxresdefault.jpg",
-  link: "https://www.youtube.com/watch?v=0HwoWDLWPA4"
-  category: ["chill", "música"]
-},
-{
-  podcastName: "Obsidian Soundfields",
-  episode: "082 // Wind Spine",
-  videId: "RpIxHX5wPpw",
-  coverImage: "https://i.ytimg.com/vi/RpIxHX5wPpw/maxresdefault.jpg"
-  link: "https://www.youtube.com/watch?v=RpIxHX5wPpw"
-  category: ["ambiente", "chill"]
-}
-]
+  {
+    channelName: "Chill Cartoon Vibes",
+    videoName: "It's cold, I know, Get some rest, traveler",
+    videId: "0HwoWDLWPA4",
+    coverImage: "https://i.ytimg.com/vi/0HwoWDLWPA4/maxresdefault.jpg",
+    link: "https://www.youtube.com/watch?v=0HwoWDLWPA4",
+    category: ["chill", "música"],
+  },
+  {
+    channelName: "Obsidian Soundfields",
+    videoName: "082 // Wind Spine",
+    videId: "RpIxHX5wPpw",
+    coverImage: "https://i.ytimg.com/vi/RpIxHX5wPpw/maxresdefault.jpg",
+    link: "https://www.youtube.com/watch?v=RpIxHX5wPpw",
+    category: ["ambiente", "chill"],
+  },
+];
 ```
