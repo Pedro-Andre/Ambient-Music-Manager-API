@@ -51,3 +51,5 @@ GET:
   },
 ];
 ```
+
+GET: Retorna lista de episódios baseados em um parâmetro enviado pelo client do nome do vídeo

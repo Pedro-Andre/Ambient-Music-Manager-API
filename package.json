@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Um app estilo Netflix, a onde possa centralizar diferentes tipos de músicas e sons ambiente para seções de trabalho ou estudos, que serão separados por categoria.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "tsx --env-file=.env src/server.ts",

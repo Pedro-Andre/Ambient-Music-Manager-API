@@ -1,10 +1,14 @@
 import * as http from "http";
-import { getVideos } from "./controllers/videos-controller";
+import { getFilterVideo, getVideos } from "./controllers/videos-controller";
 
 const server = http.createServer(
   async (req: http.IncomingMessage, res: http.ServerResponse) => {
-    if (req.method === "GET") {
+    if (req.method === "GET" && req.url === "/api/list") {
       await getVideos(req, res);
+    }
+
+    if (req.method === "GET" && req.url === "/api/channel") {
+      await getFilterVideo(req, res);
     }
   }
 );
