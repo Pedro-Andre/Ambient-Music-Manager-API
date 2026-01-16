@@ -1,55 +1,116 @@
 # Ambient Music Manager
 
-### Descrição
+Um aplicativo estilo Netflix para centralizar músicas e sons ambiente do YouTube, organizados por categorias para sessões de trabalho ou estudos.
 
-Um app estilo Netflix, a onde possa centralizar diferentes tipos de músicas e sons ambiente para seções de trabalho ou estudos, que serão separados por categoria.
+## 📋 Sobre o Projeto
 
-### Domínio
+O Ambient Music Manager é uma plataforma que permite aos usuários explorar e descobrir vídeos de músicas e sons ambientes hospedados no YouTube, organizados em categorias como Chuva, Noise, Chill, Deep Focus e Work Music.
 
-Sons ambientes disponíveis no Youtube
+## ✨ Features
 
-### Features
+- **Listagem por Categorias**: Visualize vídeos organizados em seções temáticas
+  - 🌧️ Chuva
+  - 🎵 Noise
+  - 🎧 Chill
+  - 🧠 Deep Focus
+  - 💼 Work Music
+- **Filtro por Nome**: Busque vídeos específicos pelo nome ou canal
+- **Integração com YouTube**: Acesso direto aos vídeos através de links
 
-- Listar os vídeos de música e sons ambients em seções de categoria
-  - Chuva, Noise, Chill, Deep Focus, Work Music
-- Filtrar os vídeos por nome
+## 🚀 Tecnologias
 
-## Como
+- Node.js
+- TypeScript
+- HTTP nativo (sem frameworks)
 
-#### Feature:
+## 📡 API
 
-Listar os vídeos em seções de categoria
+### Endpoints
 
-### Implementação
+#### `GET /api/list`
 
-GET:
+Lista todos os vídeos disponíveis com suas informações.
 
-- Retorno em API Rest (JSON):
-  - Nome do canal
-  - Nome do vídeo
-  - Imagem de capa
-  - Link do vídeo
-  - Categoria
+**Resposta:**
 
-```js
+```json
 [
   {
-    channelName: "Chill Cartoon Vibes",
-    videoName: "It's cold, I know, Get some rest, traveler",
-    videId: "0HwoWDLWPA4",
-    coverImage: "https://i.ytimg.com/vi/0HwoWDLWPA4/maxresdefault.jpg",
-    link: "https://www.youtube.com/watch?v=0HwoWDLWPA4",
-    category: ["chill", "música"],
-  },
-  {
-    channelName: "Obsidian Soundfields",
-    videoName: "082 // Wind Spine",
-    videId: "RpIxHX5wPpw",
-    coverImage: "https://i.ytimg.com/vi/RpIxHX5wPpw/maxresdefault.jpg",
-    link: "https://www.youtube.com/watch?v=RpIxHX5wPpw",
-    category: ["ambiente", "chill"],
-  },
-];
+    "channelName": "Chill Cartoon Vibes",
+    "videoName": "It's cold, I know, Get some rest, traveler",
+    "videId": "0HwoWDLWPA4",
+    "coverImage": "https://i.ytimg.com/vi/0HwoWDLWPA4/maxresdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=0HwoWDLWPA4",
+    "category": ["chill", "música"]
+  }
+]
 ```
 
-GET: Retorna lista de episódios baseados em um parâmetro enviado pelo client do nome do vídeo
+#### `GET /api/channel?c={nomeDoCanal}`
+
+Filtra vídeos baseado no nome do vídeo ou canal.
+
+**Parâmetros:**
+
+- `channelName` (query string): Nome do canal para filtrar os vídeos
+
+**Resposta:**
+
+```json
+[
+  {
+    "channelName": "Obsidian Soundfields",
+    "videoName": "082 // Wind Spine",
+    "videId": "RpIxHX5wPpw",
+    "coverImage": "https://i.ytimg.com/vi/RpIxHX5wPpw/maxresdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=RpIxHX5wPpw",
+    "category": ["ambiente", "chill"]
+  }
+]
+```
+
+## 🛠️ Instalação
+
+```bash
+# Clone o repositório
+git clone <url-do-repositorio>
+
+# Entre no diretório do projeto
+cd ambient-music-manager
+
+# Instale as dependências
+npm install
+
+# Compile o TypeScript
+npm run build
+
+# Inicie o servidor
+npm start
+```
+
+## 📦 Estrutura do Projeto
+
+```
+ambient-music-manager/
+├── src/
+│   ├── controllers/
+│   │   └── videos-controller.ts
+│   ├── routes/
+│   │   └── routes.ts
+│   ├── utils/
+│   │   └── http-methods.ts
+│   └── app.ts
+├── package.json
+└── tsconfig.json
+```
+
+## 🎯 Como Usar
+
+1. Inicie o servidor
+2. Acesse os endpoints disponíveis:
+   - Liste todos os vídeos: `http://localhost:3333/api/list`
+   - Filtre por nome do canal: `http://localhost:3333/api/channel?c=Blume`
+
+---
+
+Desenvolvido com ☕ para ajudar na produtividade e foco
