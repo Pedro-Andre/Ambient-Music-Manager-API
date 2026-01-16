@@ -81,27 +81,8 @@ cd ambient-music-manager
 # Instale as dependências
 npm install
 
-# Compile o TypeScript
-npm run build
-
 # Inicie o servidor
-npm start
-```
-
-## 📦 Estrutura do Projeto
-
-```
-ambient-music-manager/
-├── src/
-│   ├── controllers/
-│   │   └── videos-controller.ts
-│   ├── routes/
-│   │   └── routes.ts
-│   ├── utils/
-│   │   └── http-methods.ts
-│   └── app.ts
-├── package.json
-└── tsconfig.json
+npm start:dev
 ```
 
 ## 🎯 Como Usar
