@@ -73,7 +73,7 @@ Filtra vídeos baseado no nome do vídeo ou canal.
 
 ```bash
 # Clone o repositório
-git clone <url-do-repositorio>
+git clone https://github.com/Pedro-Andre/Ambient-Music-Manager.git
 
 # Entre no diretório do projeto
 cd ambient-music-manager
