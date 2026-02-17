@@ -1,21 +1,18 @@
-# Ambient Music Manager
+# Ambient Music Manager API
 
-Um aplicativo estilo Netflix para centralizar músicas e sons ambiente do YouTube, organizados por categorias para sessões de trabalho ou estudos.
+Uma API REST para centralizar e organizar vídeos de músicas e sons ambiente do YouTube, categorizados para sessões de trabalho ou estudo.
 
 ## 📋 Sobre o Projeto
 
-O Ambient Music Manager é uma plataforma que permite aos usuários explorar e descobrir vídeos de músicas e sons ambientes hospedados no YouTube, organizados em categorias como Chuva, Noise, Chill, Deep Focus e Work Music.
+O Ambient Music Manager é uma API que expõe dados de vídeos de músicas e sons ambientes hospedados no YouTube, organizados em categorias como Chuva, Noise, Chill, Deep Focus e Work Music. A API pode ser consumida por qualquer cliente — web, mobile ou desktop.
 
-## ✨ Features
+## ✨ Categorias Disponíveis
 
-- **Listagem por Categorias**: Visualize vídeos organizados em seções temáticas
-  - 🌧️ Chuva
-  - 🎵 Noise
-  - 🎧 Chill
-  - 🧠 Deep Focus
-  - 💼 Work Music
-- **Filtro por Nome**: Busque vídeos específicos pelo nome ou canal
-- **Integração com YouTube**: Acesso direto aos vídeos através de links
+- 🌧️ Chuva
+- 🎵 Noise
+- 🎧 Chill
+- 🧠 Deep Focus
+- 💼 Work Music
 
 ## 🚀 Tecnologias
 
@@ -23,15 +20,31 @@ O Ambient Music Manager é uma plataforma que permite aos usuários explorar e d
 - TypeScript
 - HTTP nativo (sem frameworks)
 
-## 📡 API
+## 🛠️ Instalação
 
-### Endpoints
+```bash
+# Clone o repositório
+git clone https://github.com/Pedro-Andre/Ambient-Music-Manager.git
 
-#### `GET /api/list`
+# Entre no diretório do projeto
+cd ambient-music-manager
 
-Lista todos os vídeos disponíveis com suas informações.
+# Instale as dependências
+npm install
 
-**Resposta:**
+# Inicie o servidor em modo de desenvolvimento
+npm run start:dev
+```
+
+O servidor estará disponível em `http://localhost:3333`.
+
+## 📡 Endpoints
+
+### `GET /api/list`
+
+Retorna todos os vídeos cadastrados com suas informações.
+
+**Exemplo de resposta:**
 
 ```json
 [
@@ -46,15 +59,25 @@ Lista todos os vídeos disponíveis com suas informações.
 ]
 ```
 
-#### `GET /api/channel?c={nomeDoCanal}`
+---
 
-Filtra vídeos baseado no nome do vídeo ou canal.
+### `GET /api/channel?c={nomeDoCanal}`
 
-**Parâmetros:**
+Filtra vídeos pelo nome do canal ou do vídeo.
 
-- `channelName` (query string): Nome do canal para filtrar os vídeos
+**Parâmetros de query:**
 
-**Resposta:**
+| Parâmetro | Tipo   | Descrição                              |
+|-----------|--------|----------------------------------------|
+| `c`       | string | Nome do canal ou vídeo para filtrar    |
+
+**Exemplo de requisição:**
+
+```
+GET http://localhost:3333/api/channel?c=Blume
+```
+
+**Exemplo de resposta:**
 
 ```json
 [
@@ -69,29 +92,17 @@ Filtra vídeos baseado no nome do vídeo ou canal.
 ]
 ```
 
-## 🛠️ Instalação
+## 📦 Schema do Objeto de Vídeo
 
-```bash
-# Clone o repositório
-git clone https://github.com/Pedro-Andre/Ambient-Music-Manager.git
-
-# Entre no diretório do projeto
-cd ambient-music-manager
-
-# Instale as dependências
-npm install
-
-# Inicie o servidor
-npm start:dev
-```
-
-## 🎯 Como Usar
-
-1. Inicie o servidor
-2. Acesse os endpoints disponíveis:
-   - Liste todos os vídeos: `http://localhost:3333/api/list`
-   - Filtre por nome do canal: `http://localhost:3333/api/channel?c=Blume`
+| Campo         | Tipo       | Descrição                                      |
+|---------------|------------|------------------------------------------------|
+| `channelName` | `string`   | Nome do canal no YouTube                       |
+| `videoName`   | `string`   | Título do vídeo                                |
+| `videId`      | `string`   | ID do vídeo no YouTube                         |
+| `coverImage`  | `string`   | URL da thumbnail do vídeo                      |
+| `link`        | `string`   | URL completa do vídeo no YouTube               |
+| `category`    | `string[]` | Lista de categorias às quais o vídeo pertence  |
 
 ---
 
-Desenvolvido com ☕ para ajudar na produtividade e foco
+Desenvolvido com ☕ para ajudar na produtividade e foco.
